@@ -1,0 +1,55 @@
+/******************************分页开始*********************************/
+.pagination{
+    border: 1px solid #E1E1E1;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    font-family: "微软雅黑";
+    font-size: 13px;
+    height: 45px;
+    line-height: 20px;
+}
+.pagination .page-left{
+    float: left;
+    width: 50%;
+}
+.pagination .align-left{
+    text-align: left;
+}
+.pagination .align-right{
+    text-align: right;
+}
+.pagination .page{
+    background: #EEEEEE;
+    color: #428BCA;
+    border: 1px solid;
+    border-color: #E1E1E1;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+.pagination .page:focus{
+    border-color: #E1E1E1;
+}
+.pagination .spot{
+    color: #666;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination .active{
+    background: #428BCA;
+    color: #fff;
+    border-color: #428BCA;
+}
+.pagination .page-input{
+    border: 1px solid;
+    border-color: #E1E1E1;
+    padding: 3px 3px;
+    text-align: center;
+    width: 40px;
+}
+/***********************************分页结束*********************************/
+
+.actionPanel{
+    border: none;
+}

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.magicbeans.collaboration</groupId>
+    <artifactId>collaboration-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../collaboration-common</module>
+        <module>../collaboration-service</module>
+        <module>../collaboration-api</module>
+        <module>../collaboration-admin</module>
+    </modules>
+
+    <!--版本号配置-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
+        <java.version>1.8</java.version>
+        <logback.version>1.2.3</logback.version>
+        <spring-session.version>1.3.0.RELEASE</spring-session.version>
+        <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+        <swagger2.version>2.7.0</swagger2.version>
+        <fastjson.version>1.2.13</fastjson.version>
+        <spring.data.version>1.7.2.RELEASE</spring.data.version>
+        <mybatis-plus.version>2.1.4</mybatis-plus.version>
+        <mybatis-plus-springboot.version>1.0.4</mybatis-plus-springboot.version>
+        <mysql-connector.version>5.1.38</mysql-connector.version>
+        <junit.version>4.12</junit.version>
+        <okhttp.version>3.4.1</okhttp.version>
+        <velocity.version>1.7</velocity.version>
+        <hibernate-validator.version>5.3.5.Final</hibernate-validator.version>
+        <shiro.spring.version>1.3.2</shiro.spring.version>
+        <shiro.version>1.2.4</shiro.version>
+        <shiro.tag.version>0.1</shiro.tag.version>
+        <common-io.version>1.4</common-io.version>
+        <commons-lang3.version>3.6</commons-lang3.version>
+        <spring-booot-druid.version>1.1.5</spring-booot-druid.version>
+        <project-base.version>1.0.3</project-base.version>
+        <activiti.version>5.22.0</activiti.version>
+        <module-activiti.version>1.0</module-activiti.version>
+        <json-web-token.version>1.0.1</json-web-token.version>
+        <module-base.version>1.0.7</module-base.version>
+        <apache-http.version>3.1</apache-http.version>
+        <json-nsf.version>2.3</json-nsf.version>
+        <apache-core.version>4.4.8</apache-core.version>
+        <apache-httpclient.version>4.5.4</apache-httpclient.version>
+    </properties>
+
+    <!--私服设置-->
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>magicbeans-releases</id>
+            <url>http://maven.magic-beans.cn/nexus/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>magicbeans-thirdparty</id>
+            <url>http://maven.magic-beans.cn/nexus/content/repositories/thirdparty/</url>
+        </repository>
+
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <!--springboot依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <!--mybatis-plus 插件-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatisplus-spring-boot-starter</artifactId>
+            <version>${mybatis-plus-springboot.version}</version>
+        </dependency>
+        <!-- MP 核心库 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <!--数据库链接-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+        </dependency>
+        <!--druid-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${spring-booot-druid.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--配置不同的配置文件-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>environment/development/*</exclude>
+                    <exclude>environment/production/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/environment/${environment}</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--多环境打包-->
+    <profiles>
+        <!--开发环境-->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <environment>development</environment>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <!-- 线上环境 -->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <environment>production</environment>
+            </properties>
+        </profile>
+
+    </profiles>
+
+
+</project>
